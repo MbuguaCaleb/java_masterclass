@@ -2,46 +2,45 @@
 package com.codewithcaleb;
 public class Main {
     public static void main(String[] args){
-        //Casting and Type Conversion
+       //The Math Class
 
-        //Implicit casting
+        //It has a number of useful methods
 
-        //Whenever you are adding a smaller datatype to a bigger one, casting
-        //happens automatically
+        //When the same method is implemented twice we say it has been overloaded
 
-        // byte > short > int > long > float > double
+        //We use this method to round a floating point number to a whole number
 
-       //short x =1;
-       //int y = x+2;
+        //        int result = Math.round(1.1F);
+        //        System.out.println(result);
+        //
+        //        int resultCeil = (int) Math.ceil(1.1F);
+        //        System.out.println(resultCeil);
 
-       //double x = 1.1;
-       //double y = x + 2;
 
-        //N/B
-        //Implicit casting happens when there is no chance of data loss
+        //        int result = Math.max(1,2);
+        //        System.out.println(result);
 
-       //if we do not mind about data loss we can do explicit casting
+        //        int result = Math.min(1,2);
+        //        System.out.println(result);
 
-        //explicit casting
-        //double x =1.1;
-        // int y = (int) x + 2;
+        //Math Random returns a random number between zero and one
 
-        //explicit casting can only happen between compatible types
+        //Math random always returns a double
+        // double result = Math.random();
+        // System.out.println(result);
 
-        String x = "1.1";
 
-        //The Only way that a string can be converted to an integer is through wrapper classes
-        //Integer.parseInt()
-        //Float.parseFloat()
-       // int y = Integer.parseInt(x) + 2;
+        //Returning a Number Between 0 to 100
 
-        //Java is very strict on the datatypes
+        //Explicit casting is where i want to cast regardaless
+        //If i still want it to be an Integer i will explicitly cast it
 
-        Double y = Double.parseDouble(x) + 2;
+       //int result = (int) Math.round(Math.random() * 100);
+       //System.out.println(result);
 
-        //This is very important since we always receive input from a user as a string
-        System.out.println(y);
+        int result = (int) (Math.random() * 100);
 
+        System.out.println(result);
 
     }
 }
