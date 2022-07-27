@@ -1,33 +1,22 @@
 package com.codewithcaleb;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-      //Switch Statements
-        //
-        String role = "admin";
-        switch (role){
-            case "admin":
-                System.out.println("You are an Admin");
-                break;
-            case "moderator":
-                System.out.println("You are a Moderator");
-                break;
-            default:
-                System.out.println("You are a guest");
+        System.out.print("Number:");
+        //i create an instance of the scanner class
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
 
-        }
-
-//        if(role == "admin")
-//            System.out.println("You are an Admin");
-//        else if (role == "moderator")
-//            System.out.println("You are a moderator");
-//        else
-//            System.out.println("You are a guest");
-
-
-        //Switch Statement
-
-
+        if((number % 5 == 0) && (number % 3)== 0)
+            System.out.println("FizzBuzz");
+        else if(number % 5 == 0)
+            System.out.println("Fizz");
+        else if (number % 3 == 0)
+            System.out.println("Buzz");
+        else
+            System.out.println(number);
     }
 }
