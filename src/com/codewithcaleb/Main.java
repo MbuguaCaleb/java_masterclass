@@ -3,29 +3,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.print("Number:");
-        //i create an instance of the scanner class
+        //Its not advisable to put the scanner Object inside the While Loop due to Memory
         Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        if((number % 5 == 0) && (number % 3)== 0)
-            System.out.println("FizzBuzz");
-        else if(number % 5 == 0)
-            System.out.println("Fizz");
-        else if (number % 3 == 0)
-            System.out.println("Buzz");
-        else
-            System.out.println(number);
+        String input = "";
 
-        //SOLUTION TWO
-        if(number % 5 == 0){
-            if(number % 3 == 0)
-                System.out.println("FizzBuzz");
-            else
-                System.out.println("Fizz");
-        }else if(number % 3 == 0 ){
-            System.out.println("Buzz");
-        }else{
-            System.out.println(number);
+        //We cannot use comparison Operators between reference Types
+        //This is wrong
+        //input != "quit"
+        while(!input.equals("quit")){
+            System.out.println("Input:");
+            input = scanner.nextLine().toLowerCase();
+            System.out.println(input);
         }
+
+
     }
 }
