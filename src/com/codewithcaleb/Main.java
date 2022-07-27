@@ -3,28 +3,30 @@ package com.codewithcaleb;
 public class Main {
     public static void main(String[] args){
 
-        //Contol Flow
-        //Comparison Operators
+        //Method One
+        //        int temp = 32;
+        //        if(temp > 30){
+        //            System.out.println("It's a hot day");
+        //            System.out.println("Drink Water");
+        //        }else if(temp > 20 && temp <=30){
+        //            System.out.println("Beautiful Day");
+        //        }else{
+        //            System.out.println("Cold Day ");
+        //        }
 
-        //We use comparison Operators to Compare primitive Values
-        int x =1;
-        int y =2;
+        //Method Two
+        //IF you are printing Only One clause you can do away with the braces
 
-        //One equals sign stands for assignment
-        //Two equals signs represent the /equality/comparion operator
-        System.out.println(x==y);
-        //Inequality Operator
-        System.out.println(x!=y);
-        System.out.println(x<=y);
-        System.out.println(x>=y);
+        int temp = 32;
+        if(temp > 30) {
+            System.out.println("It's a hot day");
+            System.out.println("Drink Water");
+        }
+        else if(temp > 20)
+            System.out.println("Beautiful Day");
+        else
+            System.out.println("Cold Day ");
 
-
-        //Logical Operators
-        //Condotional Statements
-        //Loops
-
-
-        //Conditional Statements
 
 
 
