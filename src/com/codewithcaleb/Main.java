@@ -1,82 +1,34 @@
 package com.codewithcaleb;
 
-import java.text.NumberFormat;
-import java.util.Scanner;
 
 public class Main {
-    //If i have common variables being used by methods of a Class, i can define them in the class scope
-    final static byte MONTHS_IN_YEAR =12;
-    final static byte PERCENT = 100;
 
     public static void main(String[] args) {
-        //Refactoring
-        //Changing the structure of our code without changing its behavior
-        //Our Main Method should never have too Many Lines of Code
-        //Read Number will return a value Only when Success
-        int principal = (int) readNumber("Principal ",1000,1_000_000);
-        float annualInterest = (float) readNumber("Annual Interest Rate: ",1,30);
-        byte years =(byte) readNumber("Period (Years): ",1,30);
 
-        //calling to calculate Mortgage Method
-        printMorgage(principal, annualInterest, years);
+        //Java Rules
+        //1 .We Must Always specify the datatypes of our variables
+        //Other Programming Languages are More linient but Java is Not
+        String name ="CALEB";
 
-        //Calling print Payments Schedule Method
-        printPaymentsSchedule(principal, annualInterest, years);
-    }
+        //2.We must terminate our Statements with semi Colons unless we are defining a code block
+        int Age = 12;
 
-    private static void printMorgage(int principal, float annualInterest, byte years) {
-        double mortgage = calculateMortgage(principal, annualInterest, years);
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
+        //3.When we are calling methods we must always include a paranthesis.
         System.out.println();
-        System.out.println("MORTGAGE");
-        System.out.println("---------");
-        System.out.println("Mortgage:" + mortgageFormatted);
-    }
 
-    private static void printPaymentsSchedule(int principal, float annualInterest, byte years) {
-        System.out.println();
-        System.out.println("PAYMENT SCHEDULE");
-        System.out.println("----------------");
-        for (short month = 1; month <= years * MONTHS_IN_YEAR; month ++){
-            double balance = calculateBalance(principal, annualInterest, years,month);
-            System.out.println( NumberFormat.getCurrencyInstance().format(balance));
-        }
-    }
 
-    public static double readNumber(String prompt,double min, double max){
-        Scanner scanner = new Scanner(System.in);
-        double value;
-        while(true){
-            System.out.print(prompt);
-            value = scanner.nextFloat();
-            if(value >= min && value <= max)
-                break;
-            System.out.println("Enter a Value Between" + min + "and"+ max);
-        }
-        return  value;
-    }
-    public static double calculateBalance(int principal,
-                                          float annualInterest,
-                                          byte years,
-                                          short numberOfPaymentsMade){
+        //4 Strings in Java are represented by Double Quotes
+        //Single quotes are reserved for Characters unlike in other Languages like Python
 
-        short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
-        float monthlyInterest = annualInterest /PERCENT/MONTHS_IN_YEAR;
-        double balance = principal *(Math.pow(1+ monthlyInterest,numberOfPayments) - Math.pow(1+ monthlyInterest,numberOfPaymentsMade))
-                                   /(Math.pow(1+ monthlyInterest,numberOfPayments) -1);
-        return  balance;
+        //5 Java is Case sensitive so we Must always ensure that our variables are named correctly
+
+        //6.We cannot name our variables using keywords/ such as class
+
+        //7 We cannot use a single equals sign to compare values
+        //There is a big difference between one equals sign and two equals sign in Java.
+
+
+
 
     }
-    public static double calculateMortgage (int principal,
-                                            float annualInterest,
-                                            byte years){
-        //Always remember about scope, whenever you declare variables inside a function,
-        //They Only belong to that particular scope
-        short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
-        float monthlyInterest = annualInterest /PERCENT/MONTHS_IN_YEAR;
-        double mortgage = principal*(monthlyInterest * Math.pow(1+ monthlyInterest,numberOfPayments))/
-                (Math.pow(1+monthlyInterest,numberOfPayments) -1 );
-        return mortgage;
-       }
-
 }
