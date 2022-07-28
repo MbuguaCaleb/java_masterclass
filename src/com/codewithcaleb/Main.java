@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         //Refactoring
         //Changing the structure of our code without changing its behavior
-
+        //Our Main Method should never have too Many Lines of Code
         //Read Number will return a value Only when Success
         int principal = (int) readNumber("Principal ",1000,1_000_000);
         float annualInterest = (float) readNumber("Annual Interest Rate: ",1,30);
